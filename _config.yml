@@ -1,13 +1,13 @@
-title: Parchment
-author: pro-panda
-subtitle: The life of a frustrated engineer
+title: Sabarish's blog
+author: Sabarish Kuduwa Sivanath
+subtitle: Random articles on Machine Learning, Robotics and more
 
-url: "https://rahulbothra.com"
-baseurl: "/parchment"
+url: "https://sks3i.github.io"
+baseurl: 
 
 footer_only_homepage: true
-footer_url: "https://github.com/rhl-bthr"
-footer_text: "Theme by rhl-bthr"
+footer_url: "https://github.com/sks3i"
+footer_text: "Activating one neuron at a time. Slow and steady"
 
 profile-picture: assets/profile.png
 favicon_location: assets/favicon.ico
@@ -20,5 +20,3 @@ sass:
 navbar:
  - name: "About"
    link: "about"
- - name: "Resume"
-   absolute-link: "https://rahulbothra.com/cv.pdf"
