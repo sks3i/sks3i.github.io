@@ -2,14 +2,14 @@
 layout: post
 title: Running Llama Inference in C++
 subtitle: 
-tags: [cpp, ml]
+tags: [cpp, ml, llm, llama]
 ---
 
 C++ is one of the go to languages where speed, efficiency and reliability are important. Calling Llama models directly in C++ can help in reducing additional overheads.
 
 ### Downloading model weights and basic setup
 
-To call Llama, you need access to the model weights and it can be requested in HuggingFace (this is preferred for now.) Once the access as been granted, you can download it via huggingface-cli. For example, to download the 1B model,
+To call Llama, you need access to the model weights and it can be requested in HuggingFace (this is preferred for now.) Once the access has been granted, you can download it via huggingface-cli. For example, to download the 1B model,
 
 ```
 huggingface-cli download meta-llama/Llama-3.2-1B
@@ -23,11 +23,11 @@ Next step is to build `llama.cpp` repo. We need to build shared libs so we can i
 > git clone https://github.com/ggerganov/llama.cpp.git
 > cd llama.cpp
 > mkdir build && cd build
-> cmake .. -DLLAMA_STATIC=Off -DBUILD_SHARED_LIBS=ON
+> cmake ..
 > make
 ```
 
-`llama.cpp` expects the model in gguf format. To convert the llama model you just downloaded to gguf format, you can run `convert_hf_to_gguf.py`. 
+`llama.cpp` expects the model in gguf format. To convert the llama model you just downloaded to gguf format, you can run `convert_hf_to_gguf.py`. It only works for models downloaded via hugging face, as the name suggests. Otherwise, you need to first convert the model into hugging face format.
 ```
 python3 convert_hf_to_gguf.py /path/to/model --outfile llama_1b.gguf
 ```
@@ -44,6 +44,7 @@ In the cli tool, you can use `-m` to specify the model path, `-n` to specify num
 ### Integrating llama.cpp with C++ programs
 
 Simplest way is to add `llama.cpp` as a git submodule to your C++ application. You can create a new CMakeLists.txt as follows
+
 ```Makefile
 cmake_minimum_required(VERSION 3.12)
 project(MyProject)
@@ -63,7 +64,7 @@ Here are some simplistic overview of some of the important functions (I'll go ov
 * While decoding, you need a sampler to sample the token from the logits. You can use `llama_sampler_chain_init` to initialize the sampler.
 * To decode, you need the model context and `llama_batch`. It basically holds the batch of the token sequence. 
 
-Here is a sample program to load model, tokenize prompt and generate output.
+Some basic code to tokenize the prompt and generate a text is as follows.
 
 ```cpp
 /*
