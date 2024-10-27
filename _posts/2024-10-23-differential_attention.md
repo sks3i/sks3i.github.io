@@ -15,7 +15,7 @@ Here, $\lambda$ is learnable scalar and authors have defined it as
 
 $$ \lambda = exp(\lambda_{q1} \cdot \lambda_{k1}) - exp(\lambda_{q2} \cdot \lambda_{k2}) + \lambda_{init} $$
 
-$\lambda_{q1}$, $\lambda_{k1}$, $\lambda_{q2}$, $\lambda_{k2}$ are learned through backprop. Whereas, $\lambda_{init}$ is defined as $0.8 - 0.6 \times exp(-0.3 \cdot (l-1)$.
+$\lambda_{q1}$, $\lambda_{k1}$, $\lambda_{q2}$, $\lambda_{k2}$ are learned through backprop. Whereas, $\lambda_{init}$ is defined as $0.8 - 0.6 \times exp(-0.3 \cdot (l-1))$.
 
 
 #### My thoughts
