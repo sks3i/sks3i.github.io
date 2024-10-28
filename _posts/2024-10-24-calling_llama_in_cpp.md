@@ -45,7 +45,7 @@ In the cli tool, you can use `-m` to specify the model path, `-n` to specify num
 
 Simplest way is to add `llama.cpp` as a git submodule to your C++ application. You can create a new CMakeLists.txt as follows
 
-```Makefile
+~~~makefile
 cmake_minimum_required(VERSION 3.12)
 project(MyProject)
 
@@ -54,7 +54,7 @@ add_subdirectory(llama.cpp)
 # Add main.cpp as an executable and link it with the llama library
 add_executable(main main.cpp)
 target_link_libraries(main PRIVATE llama)
-```
+~~~
 
 Here are some simplistic overview of some of the important functions (I'll go over in more deeply in another post.)
 
@@ -66,7 +66,7 @@ Here are some simplistic overview of some of the important functions (I'll go ov
 
 Some basic code to tokenize the prompt and generate a text is as follows.
 
-```cpp
+~~~cpp
 /*
 Sample C++ program to call Llama 1B model.
 */
@@ -164,4 +164,4 @@ int main(int argc, char* argv[])
     std::cout << "Generated text: " << generated_text << std::endl;
     return 0;
 }
-```
+~~~
