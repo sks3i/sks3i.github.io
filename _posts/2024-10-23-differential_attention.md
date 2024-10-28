@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Introduction to Differential Attention
+title: Introduction to Differential Transfomer
 subtitle: 
 tags: [coreml, ml, deep learning]
 ---
 
-Recently, Microsoft (Tianzhu Ye et. al.) released a paper called [differential attention](https://arxiv.org/pdf/2410.05258) which is supposed to cancel noise in attention module. The concept is similar to how noise cancelling headphones work.
+Recently, Microsoft (Tianzhu Ye et. al.) released a paper called [differential transfomer](https://arxiv.org/pdf/2410.05258) which is supposed to cancel noise in attention module. The concept is similar to how noise cancelling headphones work.
 
 In the attention block, $Q$ and $K$ are projected to $W_1^Q$, $W_2^Q$, $W_1^K$, $W_2^K$. The idea here is we can use $W_1^Q$ and $W_1^K$ to be coming from "one microphone" and $W_2^Q$ and $W_2^K$ to be coming from "other microphone". The attention is modified as follows, 
 
