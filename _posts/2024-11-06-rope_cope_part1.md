@@ -12,7 +12,7 @@ The way the attention mechanism works, we need to provide positional information
 
 Rotary embeddings was introduced in [RoFormer paper](https://arxiv.org/pdf/2104.09864), and it has had quite a few success, esp in Llama 3 models. 
 
-Consider a set of word tokens $ W = \{w_i\}_{i=1}^N $ and $ X = \{x_i\}_{i=1}^N $ be its corresponding word embeddings. $ x_i $ is a $ d $ dimensional vector. Let's define a function $ f $ which adds position information to the word embeddings in some manner. In the attention module, query and key vectors with its positional information can be defined as 
+Consider a set of word tokens $ W = \{w_1, w_2, \cdots, w_N\} $ and $ X = \{x_i\}_{i=1}^N $ be its corresponding word embeddings. $ x_i $ is a $ d $ dimensional vector. Let's define a function $ f $ which adds position information to the word embeddings in some manner. In the attention module, query and key vectors with its positional information can be defined as 
 
 $$ q_m=f_q(x_q,m) \\ k_n=f_k(x_k,n) \tag{1}$$
 
