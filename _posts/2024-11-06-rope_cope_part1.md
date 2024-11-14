@@ -12,13 +12,14 @@ The way the attention mechanism works, we need to provide positional information
 
 Rotary embeddings was introduced in [RoFormer paper](https://arxiv.org/pdf/2104.09864), and it has had quite a few success, esp in Llama 3 models. 
 
-Consider a set of word tokens $ W = \{w_i\}_{i=1}^N $ and $ X = \{x_i\}_{i=1}^N $ be its corresponding word embeddings. $x_i$ is a $d$ dimensional vector. Let's define a function $f$ which adds position information to the word embeddings in some manner. In the attention module, query and key vectors with its positional information can be defined as 
+Consider a set of word tokens $ W = \{w_i\}_{i=1}^N $ and $ X = \{x_i\}_{i=1}^N $ be its corresponding word embeddings. $ x_i $ is a $ d $ dimensional vector. Let's define a function $ f $ which adds position information to the word embeddings in some manner. In the attention module, query and key vectors with its positional information can be defined as 
 
 $$ q_m=f_q(x_q,m) \\ k_n=f_k(x_k,n) \tag{1}$$
 
 To capture the context between query and key, we take the dot product between them. $$qk^T=<f_q(x_q,m), f_k(x_k,n)>$$ Let's a function $g$ which capture the relative position between them we take the dot product. $$qk^T=g(x_q,x_k,n-m) \tag{2}$$ Also, at position 0, we should be able to recover the original query and key embeddings. $$q = f_q(x_q,0) \\ k = f_k(x_k,0) \tag{3}$$
 
-For simplicity, let's consider $d=2$ and represent $f_q$, $f_k$ and $g$ in polar form as $$\begin{align*} f_q(x_q,m) &= R_q(x_q,m)e^{i\theta _q(x_q,m)} \\ f_k(x_k,n) &= R_k(x_k,n)e^{i\theta _k(x_k,n)} \tag{4} \\ g(x_q,x_k,n-m) &= R_g(x_q,x_k,n-m)e^{i\theta _g(x_q,x_k,n-m)} \end{align*}$$
+For simplicity, let's consider $d=2$ and represent $f_q$, $f_k$ and $g$ in polar form as 
+$$\begin{align*} f_q(x_q,m) &= R_q(x_q,m)e^{i\theta _q(x_q,m)} \\ f_k(x_k,n) &= R_k(x_k,n)e^{i\theta _k(x_k,n)} \tag{4} \\ g(x_q,x_k,n-m) &= R_g(x_q,x_k,n-m)e^{i\theta _g(x_q,x_k,n-m)} \end{align*}$$
 
 Let's combine above equations, $$qk^T = R_q(x_q,m)e^{i\theta _q(x_q,m)} \cdot R_k(x_k,n)e^{i\theta _k(x_k,n)} = R_q(x_q,m)R_k(x_k,n)e^{i(\theta _q(x_q,m) - \theta _k(x_k, n))} \tag{5}$$
 
