@@ -13,6 +13,7 @@ The way the attention mechanism works, we need to provide positional information
 Rotary embeddings was introduced in [RoFormer paper](https://arxiv.org/pdf/2104.09864), and it has had quite a few success, esp in Llama 3 models. 
 
 Consider a set of word tokens $W = \{w_i\}_{i=1}^N$ and $X = \{x_i\}_{i=1}^N$ be its corresponding word embeddings. $x_i$ is a $d$ dimensional vector. Let's define a function $f$ which adds position information to the word embeddings in some manner. In the attention module, query and key vectors with its positional information can be defined as 
+
 $$ q_m=f_q(x_q,m) \\ k_n=f_k(x_k,n) \tag{1}$$
 
 To capture the context between query and key, we take the dot product between them. $$qk^T=<f_q(x_q,m), f_k(x_k,n)>$$ Let's a function $g$ which capture the relative position between them we take the dot product. $$qk^T=g(x_q,x_k,n-m) \tag{2}$$ Also, at position 0, we should be able to recover the original query and key embeddings. $$q = f_q(x_q,0) \\ k = f_k(x_k,0) \tag{3}$$
@@ -30,9 +31,10 @@ We get $ R_g(x_q, x_k, 0) $ and $ \theta _g(x_q, x_k, 0) $ when $m = n$ as well 
 $$ R_q(x_q, m)R_k(x_k, m) = R_g(x_q, x_k, 0) = R_q(x_q, 0)R_k(x_k, 0) = ||q|| \cdot ||k|| \tag{8}$$ 
 $$\theta _q(x_q,m) - \theta _k(x_k, m) = \theta _g(x_q, x_k, 0) = \theta _q(x_q,0) - \theta _k(x_k, 0) = \theta _k - \theta _q \tag{9}$$
 
-Since, eqn 8 doesn't depend on any position information, we can set $R_f(x, m) = ||x||$.
 
-We are re-write eqn 9, as $\theta _q(x_q,m) - \theta _q = \theta _k(x_k, m) - \theta _k$. And this doesn't depend on magnitude of query or key vector, but depends on the position $m$. Let's denote  $\theta _q(x_q,m) - \theta _q$ as $\phi (m)$. For the case $n = m + 1$, eqn(6) $$\theta _k(x_k, m + 1) - \theta _q(x_q, m) = \theta _g(x_k, x_q, 1) \\ \phi (m + 1) + \theta _k - \phi(m) - \theta _q = \theta _g(x_k, x_q, 1) \\ \phi (m + 1) - \phi(m) = \theta _g(x_k, x_q, 1) + \theta _q - \theta _k \tag{10}$$
+Since, eqn(8) doesn't depend on any position information, we can set $R_f(x, m) = ||x||$.
+
+We are re-write eqn(9), as $\theta _q(x_q,m) - \theta _q = \theta _k(x_k, m) - \theta _k$. And this doesn't depend on magnitude of query or key vector, but depends on the position $m$. Let's denote  $\theta _q(x_q,m) - \theta _q$ as $\phi (m)$. For the case $n = m + 1$, eqn(6) $$\theta _k(x_k, m + 1) - \theta _q(x_q, m) = \theta _g(x_k, x_q, 1) \\ \phi (m + 1) + \theta _k - \phi(m) - \theta _q = \theta _g(x_k, x_q, 1) \\ \phi (m + 1) - \phi(m) = \theta _g(x_k, x_q, 1) + \theta _q - \theta _k \tag{10}$$
 
 RHS of eqn(10) doesn't depend on $m$, thus it can be formulated as arithmetic progression. $$\phi(m) = m\theta + \gamma$$
 
