@@ -11,6 +11,7 @@ C++ is one of the go to languages where speed, efficiency and reliability are im
 
 To call Llama, you need access to the model weights and it can be requested in HuggingFace (this is preferred for now.) Once the access has been granted, you can download it via huggingface-cli. For example, to download the 1B model,
 
+
 ```
 huggingface-cli download meta-llama/Llama-3.2-1B
 ```
@@ -19,6 +20,8 @@ It will print the download path in the end. Probably, cli tool also provides a w
 
 
 Next step is to build `llama.cpp` repo. We need to build shared libs so we can integrate it with other C++ applications. 
+
+
 ```
 > git clone https://github.com/ggerganov/llama.cpp.git
 > cd llama.cpp
@@ -45,7 +48,8 @@ In the cli tool, you can use `-m` to specify the model path, `-n` to specify num
 
 Simplest way is to add `llama.cpp` as a git submodule to your C++ application. You can create a new CMakeLists.txt as follows
 
-~~~makefile
+
+```makefile
 cmake_minimum_required(VERSION 3.12)
 project(MyProject)
 
@@ -54,7 +58,7 @@ add_subdirectory(llama.cpp)
 # Add main.cpp as an executable and link it with the llama library
 add_executable(main main.cpp)
 target_link_libraries(main PRIVATE llama)
-~~~
+```
 
 Here are some simplistic overview of some of the important functions (I'll go over in more deeply in another post.)
 
@@ -65,6 +69,7 @@ Here are some simplistic overview of some of the important functions (I'll go ov
 * To decode, you need the model context and `llama_batch`. It basically holds the batch of the token sequence. 
 
 Some basic code to tokenize the prompt and generate a text is as follows.
+
 
 ```cpp
 /*
