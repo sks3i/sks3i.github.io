@@ -71,7 +71,7 @@ Here are some simplistic overview of some of the important functions (I'll go ov
 Some basic code to tokenize the prompt and generate a text is as follows.
 
 
-{% highlight cpp %}
+``` cpp
 /*
 Sample C++ program to call Llama 1B model.
 */
@@ -169,4 +169,4 @@ int main(int argc, char* argv[])
     std::cout << "Generated text: " << generated_text << std::endl;
     return 0;
 }
-{% endhighlight %}
+```
