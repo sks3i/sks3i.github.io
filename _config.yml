@@ -21,7 +21,7 @@ navbar:
  - name: "About"
    link: "about"
  - name: "Blog Post"
-   link: "blog"
+   link: "posts"
  - name: "Projects"
    link: "projects"
 
