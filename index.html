@@ -1,38 +1,18 @@
----
-layout: default
----
-
-{% assign has_post = false %}
-{% for post in site.posts %}
-    {% if post.private == true %}
-        {% continue %}
-    {% endif %}
-    <div class="post-card">
-        <a class="title" href="{{site.baseurl}}{{ post.url }}">
-            {{ post.title }}
-        </a>
-
-        <div class="details">
-            <b>{{ post.date | date: "%d %B %Y" }}</b>
-            <br>
-            {% if post.tags %}
-                <b>[</b>
-                {% for tag in post.tags %}
-                    <a href="{{ site.baseurl }}/tags/#{{ tag }}">{{ tag }}</a>{% if forloop.last == false %},{% endif %}
-                {% endfor %}
-                <b>]</b>
-            {% endif %}
+<div class="projects">
+    <h2>Featured Projects</h2>
+    {% assign has_project = false %}
+    {% for project in site.projects limit: 3 %}
+        <div class="project-card">
+            <a class="title" href="{{ site.baseurl }}{{ project.url }}">
+                {{ project.title }}
+            </a>
+            <div class="details">
+                {{ project.subtitle }}
+            </div>
         </div>
-
-        <div class="subtitle">
-            {{ post.subtitle }}
-        </div>
-    </div>
-    {% if forloop.last == false %}
-    <hr>
+        {% assign has_project = true %}
+    {% endfor %}
+    {% if has_project == false %}
+        <div class="no-projects">No projects to show yet. Stay tuned!</div>
     {% endif %}
-    {% assign has_post = true %}
-{% endfor %}
-{% if has_post == false %}
-    <div class="no-post">I've lost the ink pot. Check back later...</div>
-{% endif %}
+</div>
