@@ -20,6 +20,22 @@ sass:
 navbar:
  - name: "About"
    link: "about"
+ - name: "Blog Post"
+   link: "blog"
+ - name: "Projects"
+   link: "projects"
+
+# Collections
+collections:
+  projects:
+    output: true
+
+# Defaults for _projects layout
+defaults:
+  - scope:
+      path: "_projects"
+    values:
+      layout: project
 
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
