@@ -1,11 +1,11 @@
 ---
 layout: post
-title: RoPE vs CoPE - Part 1
+title: Rotary Positional Embeddings
 subtitle: 
 tags: [coreml, ml, deep learning]
 ---
 
-The way the attention mechanism works, we need to provide positional information to the input tokens. There are quite a few ways to give such information to the model, and this series we will explore Rotary embeddings and Contextual embeddings for the positional information.
+The way the attention mechanism works, we need to provide positional information to the input tokens. There are quite a few ways to give such information to the model, and the one that's popular these days are Rotary Embeddings.
 
 
 ## Rotary Embeddings
