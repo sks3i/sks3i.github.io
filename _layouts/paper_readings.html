@@ -4,8 +4,8 @@ layout: default
 
 <div class="paper-readings-container">
     <div class="paper-readings-grid">
-        {% if site.paper_readings %}
-            {% for post in site.paper_readings %}
+        {% if site._paper_readings %}
+            {% for post in site._paper_readings %}
                 <div class="paper-reading-card">
                     <a href="{{ post.url | relative_url }}">
                         {% if post.thumbnail %}
