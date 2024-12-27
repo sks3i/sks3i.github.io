@@ -2,6 +2,16 @@
 layout: default
 ---
 
+<!-- Debug information -->
+<div style="background: #eee; padding: 10px; margin: 10px;">
+    <h4>Debug Information:</h4>
+    <ul>
+        <li>site.paper_readings exists: {{ site.paper_readings != nil }}</li>
+        <li>Collection size: {{ site.paper_readings.size }}</li>
+        <li>Available collections: {{ site.collections | map: "label" | join: ", " }}</li>
+    </ul>
+</div>
+
 <div class="paper-readings-container">
     <div class="paper-readings-grid">
         {% if site._paper_readings %}
