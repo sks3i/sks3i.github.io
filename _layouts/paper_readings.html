@@ -2,22 +2,11 @@
 layout: default
 ---
 
-<!-- Debug information -->
-<div style="background: #eee; padding: 10px; margin: 10px;">
-    <h4>Debug Information:</h4>
-    <ul>
-        <li>site.paper_readings exists: {{ site.paper_readings != nil }}</li>
-        <li>Collection size: {{ site.paper_readings.size }}</li>
-        <li>Available collections: {{ site.collections | map: "label" | join: ", " }}</li>
-    </ul>
-</div>
-
 <div class="paper-readings-container">
     <div class="paper-readings-grid">
-        {% if site._paper_readings %}
-            {% for post in site._paper_readings %}
-                <div class="paper-reading-card">
-                    <a href="{{ post.url | relative_url }}">
+        {% for post in site._paper_readings %}
+            <div class="paper-reading-card">
+                <a href="{{ post.url | relative_url }}">
                         {% if post.thumbnail %}
                             <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="paper-thumbnail">
                         {% endif %}
@@ -31,9 +20,6 @@ layout: default
                     </a>
                 </div>
             {% endfor %}
-        {% else %}
-            <p>No paper readings found.</p>
-        {% endif %}
     </div>
 </div>
 
