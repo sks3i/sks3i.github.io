@@ -4,22 +4,26 @@ layout: default
 
 <div class="paper-readings-container">
     <div class="paper-readings-grid">
-        {% for post in site.paper_readings %}
-            <div class="paper-reading-card">
-                <a href="{{ post.url | prepend: site.baseurl }}">
-                    {% if post.thumbnail %}
-                        <img src="{{ post.thumbnail | prepend: site.baseurl }}" alt="{{ post.title }}" class="paper-thumbnail">
-                    {% endif %}
-                    <div class="paper-info">
-                        <h3>{{ post.title }}</h3>
-                        <p class="paper-date">{{ post.date | date: "%B %d, %Y" }}</p>
-                        {% if post.description %}
-                            <p class="paper-description">{{ post.description | truncate: 150 }}</p>
+        {% if site.paper_readings %}
+            {% for post in site.paper_readings %}
+                <div class="paper-reading-card">
+                    <a href="{{ post.url | relative_url }}">
+                        {% if post.thumbnail %}
+                            <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="paper-thumbnail">
                         {% endif %}
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
+                        <div class="paper-info">
+                            <h3>{{ post.title }}</h3>
+                            <p class="paper-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                            {% if post.description %}
+                                <p class="paper-description">{{ post.description | truncate: 150 }}</p>
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No paper readings found.</p>
+        {% endif %}
     </div>
 </div>
 

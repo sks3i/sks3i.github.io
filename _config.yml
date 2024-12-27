@@ -31,6 +31,8 @@ navbar:
 collections:
   projects:
     output: true
+  paper_readings:
+    output: true
 
 # Defaults for _projects layout
 defaults:
