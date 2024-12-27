@@ -4,7 +4,7 @@ layout: default
 
 <div class="paper-readings-container">
     <div class="paper-readings-grid">
-        {% for post in site.categories.paper_readings %}
+        {% for post in site.paper_readings %}
             <div class="paper-reading-card">
                 <a href="{{ post.url | prepend: site.baseurl }}">
                     {% if post.thumbnail %}
