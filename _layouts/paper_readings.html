@@ -2,24 +2,15 @@
 layout: default
 ---
 
-<!-- Debug information -->
-<div style="background: #eee; padding: 10px; margin: 10px;">
-    <h4>Debug Information:</h4>
-    <ul>
-        <li>Method 1 (site.paper_readings): {{ site.paper_readings.size }} items</li>
-        <li>Method 2 (site.collections.paper_readings): {{ site.collections.paper_readings.docs.size }} items</li>
-    </ul>
-</div>
-
 <div class="paper-readings-container">
     <div class="paper-readings-grid">
-        {% assign readings = site.paper_readings | default: site.collections.paper_readings.docs %}
+        {% assign readings = site.paper_readings | where_exp: "item", "item.path contains '.md'" %}
         {% if readings.size > 0 %}
             {% for post in readings %}
                 <div class="paper-reading-card">
                     <a href="{{ post.url | relative_url }}">
                         {% if post.thumbnail %}
-                            <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="paper-thumbnail">
+                            <img src="{{ post.thumbnail | prepend: '/assets' | relative_url }}" alt="{{ post.title }}" class="paper-thumbnail">
                         {% endif %}
                         <div class="paper-info">
                             <h3>{{ post.title }}</h3>
@@ -32,7 +23,7 @@ layout: default
                 </div>
             {% endfor %}
         {% else %}
-            <p>No paper readings found.</p>
+            <p>No markdown files found in paper readings.</p>
         {% endif %}
     </div>
 </div>
