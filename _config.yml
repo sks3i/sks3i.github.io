@@ -24,6 +24,8 @@ navbar:
    link: "posts"
  - name: "Projects"
    link: "projects"
+ - name: "Paper Readings"
+   link: "paper_readings"
 
 # Collections
 collections:
@@ -36,6 +38,10 @@ defaults:
       path: "_projects"
     values:
       layout: project
+  - scope:
+      path: "_paper_readings"
+    values:
+      layout: paper_reading
 
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:

@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+<div class="paper-readings-container">
+    <div class="paper-readings-grid">
+        {% for post in site.categories.paper_readings %}
+            <div class="paper-reading-card">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    {% if post.thumbnail %}
+                        <img src="{{ post.thumbnail | prepend: site.baseurl }}" alt="{{ post.title }}" class="paper-thumbnail">
+                    {% endif %}
+                    <div class="paper-info">
+                        <h3>{{ post.title }}</h3>
+                        <p class="paper-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                        {% if post.description %}
+                            <p class="paper-description">{{ post.description | truncate: 150 }}</p>
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .paper-readings-container {
+        padding: 20px;
+    }
+    
+    .paper-readings-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .paper-reading-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s;
+    }
+    
+    .paper-reading-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .paper-reading-card a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .paper-thumbnail {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .paper-info {
+        padding: 15px;
+    }
+    
+    .paper-info h3 {
+        margin: 0 0 10px 0;
+        color: #333;
+    }
+    
+    .paper-date {
+        color: #666;
+        font-size: 0.9em;
+        margin: 5px 0;
+    }
+    
+    .paper-description {
+        color: #555;
+        font-size: 0.95em;
+        line-height: 1.4;
+    }
+</style>
