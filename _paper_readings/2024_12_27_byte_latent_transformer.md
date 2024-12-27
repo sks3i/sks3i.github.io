@@ -1,5 +1,5 @@
 ---
-layout: paper_reading
+layout: post
 title: Byte Latent Transformer
 date: 2024-12-27
 thumbnail: /paper_readings/blt-figure.jpg
