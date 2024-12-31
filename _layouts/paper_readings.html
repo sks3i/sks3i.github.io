@@ -10,9 +10,13 @@ layout: default
                 <div class="paper-reading-card">
                     <a href="{{ post.url | relative_url }}">
                         {% if post.thumbnail %}
-                            <div style="display: none;">
-                                Raw path: {{ post.thumbnail }}
-                                Full path: {{ post.thumbnail | relative_url }}
+                            <div>
+                                <p>Debug paths:</p>
+                                <ul>
+                                    <li>Raw thumbnail: {{ post.thumbnail }}</li>
+                                    <li>With assets: {{ '/assets' | append: post.thumbnail }}</li>
+                                    <li>Final path: {{ '/assets' | append: post.thumbnail | relative_url }}</li>
+                                </ul>
                             </div>
                             <img src="{{ '/assets' | append: post.thumbnail | relative_url }}" alt="{{ post.title }}" class="paper-thumbnail">
                         {% endif %}
