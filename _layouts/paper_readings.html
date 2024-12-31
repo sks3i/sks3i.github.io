@@ -14,7 +14,7 @@ layout: default
                                 Raw path: {{ post.thumbnail }}
                                 Full path: {{ post.thumbnail | relative_url }}
                             </div>
-                            <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="paper-thumbnail">
+                            <img src="{{ '/assets' | append: post.thumbnail | relative_url }}" alt="{{ post.title }}" class="paper-thumbnail">
                         {% endif %}
                         <div class="paper-info">
                             <h3>{{ post.title }}</h3>
