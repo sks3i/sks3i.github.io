@@ -9,6 +9,13 @@ description: Byte Latent Transformer processes bytes directly and achieve simila
 # Byte Latent Transformer
 
 
-![Byte Latent Transformer Architecture]({{ site.baseurl }}/assets/paper_readings/blt_svg.svg)
+<img src="{{ site.baseurl }}/assets/paper_readings/blt_svg.svg" alt="Byte Latent Transformer Architecture" class="zoomable" />
+
+<script>
+  mediumZoom('.zoomable', {
+    margin: 24,
+    background: '#000000d1'
+  });
+</script>
 
 
