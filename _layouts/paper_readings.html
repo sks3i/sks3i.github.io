@@ -10,7 +10,7 @@ layout: default
                 <div class="paper-reading-card">
                     <a href="{{ post.url | relative_url }}">
                         {% if post.thumbnail %}
-                            <img src="{{ '/assets' | append: post.thumbnail | absolute_url }}" alt="{{ post.title }}" class="paper-thumbnail">
+                            <img src="{{ site.url }}{{ post.thumbnail | prepend: '/assets' }}" alt="{{ post.title }}" class="paper-thumbnail">
                         {% endif %}
                         <div class="paper-info">
                             <h3>{{ post.title }}</h3>
