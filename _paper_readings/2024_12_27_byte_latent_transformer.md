@@ -18,4 +18,8 @@ description: Byte Latent Transformer processes bytes directly and achieve simila
   });
 </script>
 
+Byte Latent Transformer (BLT) is a tokenizer free model which matches the performance of 
+tokenized model for rhe 1st time. The input bytes are fed to a byte encoder, which learns to patch the bytes and sends to latent transformer. Latent transformer outputs 
+patches which is decoded to bytes by byte decoder.
+
 
