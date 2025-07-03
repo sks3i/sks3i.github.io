@@ -1,13 +1,22 @@
-# --- basic site metadata ---------------------------------
-title: "Sabarish | Notes"
-description: "Random notes on ML, robotics, and startups."
-url: "https://sks3i.github.io"   # canonical URL
-baseurl: ""                      # leave empty for user-pages
+# Setup
+title:               Sabarish's blog
+tagline:             Personal blog - AI, Robotics, and more
+description:         This is my personal blog where I write about AI, Robotics, and more.
+url:                 https://sks3i.github.io/
+baseurl:             ''
+paginate:            5
+permalink:           pretty
 
-# --- tell GitHub Pages to pull the theme -----------------
-remote_theme: "poole/lanyon"     # OWNER/REPO
+# About/contact
+author:
+  name:              Sabarish K S
+  url:               https://sks3i.github.io/
+  email:             sks3i@gmail.com
+
+# Gems
 plugins:
-  - jekyll-remote-theme          # built-in on GitHub Pages
+  - jekyll-paginate
 
-# optional tweak: pagination, markdown engine, etc.
-
+# Custom vars
+version:             1.1.0
+google_analytics_id: #UA-XXXX-Y
