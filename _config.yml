@@ -1,0 +1,13 @@
+# --- basic site metadata ---------------------------------
+title: "Sabarish | Notes"
+description: "Random notes on ML, robotics, and startups."
+url: "https://sks3i.github.io"   # canonical URL
+baseurl: ""                      # leave empty for user-pages
+
+# --- tell GitHub Pages to pull the theme -----------------
+remote_theme: "poole/lanyon"     # OWNER/REPO
+plugins:
+  - jekyll-remote-theme          # built-in on GitHub Pages
+
+# optional tweak: pagination, markdown engine, etc.
+
