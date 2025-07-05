@@ -1,7 +1,7 @@
 # Setup
 title:               Sabarish's blog
-tagline:             Personal blog - AI, Robotics, and more
-description:         This is my personal blog where I write about AI, Robotics, and more.
+tagline:             little bit of everything.
+description:         Let's build stuff.
 url:                 https://sks3i.github.io/
 baseurl:             ''
 paginate:            5
@@ -11,7 +11,7 @@ permalink:           pretty
 author:
   name:              Sabarish K S
   url:               https://sks3i.github.io/
-  email:             sks3i@gmail.com
+  email:             saba.rish91@gmail.com
 
 # Gems
 plugins:
