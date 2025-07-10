@@ -1,10 +1,19 @@
 ---
 created: 2025-07-10T08:43:40-07:00
-modified: 2025-07-10T08:53:52-07:00
+modified: 2025-07-10T14:58:07-07:00
 ---
 
 # Basic building blocks
 
 Mathematics is the universal language powering everything from computer vision to robotics. If you’ve ever skimmed a technical paper filled with terms like “field,” “real number space,” or “vector space,” you’ve encountered the building blocks of modern technology. In this article, we’ll explore these fundamental structures—starting with numbers, moving to vectors, and arriving at the geometry that enables robots to navigate and cameras to recognize faces. By tracing this hierarchy, we’ll uncover how simple arithmetic connects to the shapes and spaces that drive cutting-edge applications.
 
-##
+Now that we’ve seen how mathematics shapes technologies like computer vision and robotics, let’s start at the very beginning: the concept of a set.
+
+
+
+## The Foundation: Sets and Algebraic Structures
+
+
+### Sets: The Starting Point
+
+Sets are simple collection of entities and there are no rules or operations defined for this. For example, in an image, a set ${0, 1, ..., 255}$ represent pixel values.
