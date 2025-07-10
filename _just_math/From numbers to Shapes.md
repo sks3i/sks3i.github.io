@@ -1,6 +1,6 @@
 ---
 created: 2025-07-10T08:43:40-07:00
-modified: 2025-07-10T14:58:07-07:00
+modified: 2025-07-10T15:10:46-07:00
 ---
 
 # Basic building blocks
@@ -9,6 +9,22 @@ Mathematics is the universal language powering everything from computer vision t
 
 Now that we’ve seen how mathematics shapes technologies like computer vision and robotics, let’s start at the very beginning: the concept of a set.
 
+```
+Set (No operations)
+├── Semigroup (1 operation: Associative)
+│   └── Monoid (1 operation: Associative, with identity)
+│       └── Group (1 operation: Associative, with identity and inverses)
+└── Semiring (2 operations: Addition (commutative, associative, with identity), Multiplication (associative, distributive over addition))
+    └── Ring (2 operations: Addition (commutative, associative, with identity and inverses), Multiplication (associative, distributive, often with identity))
+        ├── Division Ring (2 operations: Addition (as in ring), Multiplication (associative, with identity and inverses, non-commutative))
+        │   └── Field (2 operations: Addition (as in ring), Multiplication (associative, commutative, with identity and inverses))
+        └── Module (2 operations: Addition (group), Scalar multiplication by a ring)
+            └── Vector Space (2 operations: Addition (group), Scalar multiplication by a field)
+                ├── Algebra (2 operations: Vector addition, Scalar multiplication, plus vector multiplication)
+                ├── Affine Space (Built on vector space, uses field for displacements)
+                ├── Euclidean Space (Vector space with inner product, uses field)
+                └── Other Geometric Spaces (e.g., Metric Spaces)
+```
 
 
 ## The Foundation: Sets and Algebraic Structures
