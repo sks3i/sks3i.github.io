@@ -1,6 +1,6 @@
 ---
 created: 2025-07-10T08:43:40-07:00
-modified: 2025-07-10T15:10:46-07:00
+modified: 2025-07-10T15:25:08-07:00
 ---
 
 # Basic building blocks
@@ -32,4 +32,13 @@ Set (No operations)
 
 ### Sets: The Starting Point
 
-Sets are simple collection of entities and there are no rules or operations defined for this. For example, in an image, a set ${0, 1, ..., 255}$ represent pixel values.
+Sets are simple collection of entities and there are no rules or operations defined for this. For example, in an image, a set ${0, 1, ..., 255}$ represent pixel values. 
+
+We can increase the complexity by adding operations to the set. If we have one operation, we get Semigroups and with two operations we get Semiring.
+
+#### Semigroups
+
+From Sets,  we can add a single way to combine entities, creating a semigroup. For example,  chaining image filters (blur, sharpening), forms a semigroup. They have the following priorities:
+● One operation: Single way to combine entities. 
+● Associative: Grouping doesn't affect the results. For example, $ (a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+● No identity or inverse
