@@ -1,6 +1,6 @@
 ---
 created: 2025-07-10T08:43:40-07:00
-modified: 2025-07-10T15:25:08-07:00
+modified: 2025-07-10T15:49:38-07:00
 ---
 
 # Basic building blocks
@@ -38,7 +38,14 @@ We can increase the complexity by adding operations to the set. If we have one o
 
 #### Semigroups
 
-From Sets,  we can add a single way to combine entities, creating a semigroup. For example,  chaining image filters (blur, sharpening), forms a semigroup. They have the following priorities:
+From Sets,  we can add a single way to combine entities, creating a semigroup. For example,  chaining image filters (blur, sharpening), forms a semigroup. They have the following properties:
+
 ● One operation: Single way to combine entities. 
 ● Associative: Grouping doesn't affect the results. For example, $ (a \cdot b) \cdot c = a \cdot (b \cdot c)$.
-● No identity or inverse
+● No identity or inverse operation. 
+
+#### Semiring
+
+From Sets, if we add two ways to combine entities,  we get semirings. They have the following properties:
+
+●
