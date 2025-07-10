@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Cooking
+title: Cooking Articles
 permalink: /cooking/
 ---
 
-<h2>Cooking Articles</h2>
+<p>I love cooking. Here are some of my receipes mostly for my reference.</p>
 <ul>
   {% for item in site.cooking %}
     <li><a href="{{ item.url }}">{{ item.title }}</a></li>
