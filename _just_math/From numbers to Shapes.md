@@ -1,6 +1,7 @@
 ---
-created: 2025-07-10T08:43:40-07:00
-modified: 2025-07-10T15:49:38-07:00
+layout: post
+title: "From Numbers to Shapes"
+date: 2025-06-10
 ---
 
 # Basic building blocks

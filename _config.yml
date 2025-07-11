@@ -26,3 +26,16 @@ collections:
     output: true
   cooking:
     output: true
+
+# Front matter defaults for collections
+defaults:
+  - scope:
+      path: "_just_math"
+      type: just_math
+    values:
+      layout: post
+  - scope:
+      path: "_cooking"
+      type: cooking
+    values:
+      layout: post
