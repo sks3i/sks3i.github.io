@@ -10,6 +10,39 @@ Mathematics is the universal language powering everything from computer vision t
 
 Now that we’ve seen how mathematics shapes technologies like computer vision and robotics, let’s start at the very beginning: the concept of a set.
 
+
+## The Foundation: Sets and Algebraic Structures
+
+
+### Sets: The Starting Point
+
+Sets are a simple collection of entities (numbers, points, or anything else) and there are no rules or operations defined for this. For example, in an image, a set ${0, 1, ..., 255}$ represent pixel values. 
+
+Sets are raw materials and to create a structure out of it, we need to add some operations. A single operation leads to semigroups and two operations leads to semirings.
+
+#### Semigroups
+
+From Sets,  we can add a single way to combine entities, creating a semigroup. For example, chaining image filters (blur, sharpen), forms a semigroup. Since there are inversion or identity operations, they form a semigroup. They have the following properties:
+
+- One operation: Single way to combine entities. 
+- Associative: Grouping doesn't affect the results. For example, $ (a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+- No identity or inverse operation. 
+
+#### Semiring
+
+Alternatively, we can equip a set with two ways to combine elements, creating a semiring. In computer vision, image dilation—a technique to enhance shapes like edges—uses a tropical semiring. Here, “addition” is taking the maximum pixel intensity in a neighborhood (e.g., a 3x3 kernel), and “multiplication” is adding kernel weights to pixel values.
+
+- Two operations: Addition (commutative, associative, with a zero element) and multiplication (associative, distributes over addition).
+- No inverses: No additive inverses (no negatives) or multiplicative inverses (no division).
+
+
+### Refining the Single Operation: Monoids and Groups
+
+
+
+
+
+
 ```
 Set (No operations)
 ├── Semigroup (1 operation: Associative)
@@ -26,28 +59,3 @@ Set (No operations)
                 ├── Euclidean Space (Vector space with inner product, uses field)
                 └── Other Geometric Spaces (e.g., Metric Spaces)
 ```
-
-
-## The Foundation: Sets and Algebraic Structures
-
-
-### Sets: The Starting Point
-
-Sets are simple collection of entities and there are no rules or operations defined for this. For example, in an image, a set ${0, 1, ..., 255}$ represent pixel values. 
-
-We can increase the complexity by adding operations to the set. If we have one operation, we get Semigroups and with two operations we get Semiring.
-
-#### Semigroups
-
-From Sets,  we can add a single way to combine entities, creating a semigroup. For example,  chaining image filters (blur, sharpening), forms a semigroup. They have the following properties:
-
-- One operation: Single way to combine entities. 
-- Associative: Grouping doesn't affect the results. For example, $ (a \cdot b) \cdot c = a \cdot (b \cdot c)$.
-- No identity or inverse operation. 
-
-#### Semiring
-
-From Sets, if we add two ways to combine entities,  we get semirings. They have the following properties:
-
-- Two operations: Addition and multiplication. 
-- No additive or multiplicative inverse.

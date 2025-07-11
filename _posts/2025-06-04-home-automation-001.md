@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Designing My Home Automation System: Part 1 - Choosing the initial setup
+title: "Designing My Home Automation System: Part 1 - Choosing the initial setup"
+date: 2025-06-04
 ---
 
 # Designing My Home Automation System: Part 1 - Choosing the initial setup
