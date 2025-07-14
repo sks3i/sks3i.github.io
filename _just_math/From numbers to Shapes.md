@@ -72,7 +72,45 @@ Fields take rings further by ensuring multiplication is commutative (order doesn
 Fields are the cornerstone of number systems, providing the scalars for vectors and geometric spaces that power vision and robotics.
 
 
+## From Numbers to Shapes: Geometric Structures
 
+Fields give us the numbers to scale and combine vectors, forming the foundation for geometric structures that bring shapes to life in computer vision and robotics. Let’s explore how vector spaces, algebras, and geometric spaces build on fields to model images, robot movements, and spatial relationships.
+
+### Vector Spaces: Combining Numbers into Vectors
+
+A vector space is a set of vectors—objects like coordinates or arrows—that can be added together and scaled by numbers from a field, like real numbers. Vector spaces have these properties:
+- Two operations: Vector addition (commutative, associative, with a zero vector) and scalar multiplication by a field (e.g., $\mathbb{R}$).
+- Full scaling: Scalars from a field allow any scaling factor, including fractions.
+
+Vector spaces are the bridge to geometry, enabling precise calculations for image data and robot positions, and supporting bilinear maps like interpolation.
+
+### Algebras: Multiplying Vectors
+
+An algebra extends a vector space by adding a way to multiply vectors together, producing another vector. In computer vision, 3x3 transformation matrices form an algebra. You can add matrices, scale them by real numbers, and multiply them to chain transformations, like rotating then stretching an image. This matrix multiplication is a bilinear map, pairing two matrices to produce another. Algebras have these properties:
+- Three operations: Vector addition, scalar multiplication (from a field), and vector multiplication (bilinear).
+
+Algebras model transformations in vision and robotics, connecting arithmetic to geometry through bilinear maps.
+
+### Affine Spaces: Points and Relative Positions
+
+An affine space is a set of points with an associated vector space for displacements, but no fixed origin. In computer vision, image stitching for panoramas treats pixel positions as points in an affine space. Affine transformations (e.g., rotations, translations) align images using vectors for relative shifts, without a fixed reference point. In robotics, SLAM (Simultaneous Localization and Mapping) models a robot’s environment as an affine space, with positions as points and movements as vectors. Affine spaces have these properties:
+- Points and displacements: Differences between points yield vectors in a vector space over a field.
+- No origin: No point is special as zero, focusing on relative positions.
+
+Affine spaces are key for navigation and alignment, using fields for precise vector calculations.
+
+### Euclidean Spaces: Measuring Distances and Angles
+
+A Euclidean space is a vector space over $\mathbb{R}$ with an inner product—a bilinear map—that defines distances and angles. In computer vision, feature vectors (e.g., edge descriptors) are compared using Euclidean distance (via the dot product) to recognize objects, like faces in photos. In robotics, a robot arm in $\mathbb{R}^3$ calculates distances to objects or angles for precise movements using the inner product. Euclidean spaces have these properties:
+- Vector space with inner product: Enables distance and angle calculations via a bilinear map.
+
+Euclidean spaces bring geometry to life, powering tasks like object recognition and robot navigation.
+
+### Other Geometric Spaces: Beyond Euclidean Geometry
+Fields and vector spaces also support advanced geometric spaces, like metric spaces, projective spaces, and manifolds. In computer vision, projective spaces model 3D scenes captured by cameras, accounting for perspective. Metric spaces measure distances between point clouds, like 3D scans for reconstruction. In robotics, manifolds model curved terrains, ensuring smooth navigation. These spaces extend Euclidean geometry, using fields for calculations and enabling specialized applications in vision and robotics.
+
+
+From sets to geometric spaces, we’ve traced a hierarchy that transforms simple numbers into the shapes and spaces driving computer vision and robotics. Below if the figure of the hierarchy we talked about
 
 
 
