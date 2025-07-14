@@ -4,8 +4,6 @@ title: "Designing My Home Automation System: Part 1 - Choosing the initial setup
 date: 2025-06-04
 ---
 
-# Designing My Home Automation System: Part 1 - Choosing the initial setup
-
 
 Anyone who's ever been a fan of Iron Man has probably dreamed of having a smart, AI-powered home that just knows everything — and today, that's more possible than ever. That dream stuck with me for years. Back in undergrad — nearly 15 years ago — I even built a basic system that let me control fans and lights using a TV remote, and later, an Android app. It was simple, but I loved doing it.
 

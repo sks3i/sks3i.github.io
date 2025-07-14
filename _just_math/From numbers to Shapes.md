@@ -1,10 +1,8 @@
 ---
 layout: post
-title: From Numbers to Shapes
+title: "Basic Building Blocks of Mathematics"
 date: 2025-06-10
 ---
-
-# Basic building blocks
 
 Mathematics is the universal language powering everything from computer vision to robotics. If you’ve ever skimmed a technical paper filled with terms like “field,” “real number space,” or “vector space,” you’ve encountered the building blocks of modern technology. In this article, we’ll explore these fundamental structures—starting with numbers, moving to vectors, and arriving at the geometry that enables robots to navigate and cameras to recognize faces. By tracing this hierarchy, we’ll uncover how simple arithmetic connects to the shapes and spaces that drive cutting-edge applications.
 
@@ -37,6 +35,42 @@ Alternatively, we can equip a set with two ways to combine elements, creating a 
 
 
 ### Refining the Single Operation: Monoids and Groups
+
+In the one operation framework, what if we want to add "do nothing" operation or "undo" operation. Then, we will end up getting Monoids and Groups.
+
+#### Monoids - Semigroup + "do nothing"
+
+A monoid extends a semigroup with identity operation - "do nothing" operation. In the filter example in semigroups, if we can add "no filter" operation, then the entire operation chain is a monoid.
+
+
+#### Groups - Monoids + "undo"
+
+A group in a monoid with an inverse (undo) operation. In computer vision, image rotations is a group - -90 degree rotation is an inverse operation for 90 degree rotation. Thus, the group have following properties:
+- One operation: A single way to combine elements.
+- Associative: Grouping doesn’t change the result.
+- Identity: A “do nothing” element exists.
+- Inverses: Every element has an inverse that undoes it, e.g., a * a⁻¹ = identity.
+
+
+### Refining the Two Operations: Rings & Fields
+
+While monoids and groups refine a single operation for tasks like image transformations, semirings introduced two operations, like maximum and addition for image dilation. To make these operations even more powerful, we can add the ability to subtract, creating rings, and then enable division, forming fields. These number systems are the backbone of precise calculations in computer vision and robotics, paving the way for vectors and geometric spaces.
+
+
+#### Rings - Semiring + "subtraction"
+
+A ring equips a set with two operations—addition and multiplication—where addition allows subtraction (via negatives), and multiplication distributes over addition. Imagine a computer vision system using integer coordinates for pixels, like (100, 200). You can add coordinates to shift an image, subtract to find differences, or multiply for scaling effects, but dividing (e.g., (100, 200) ÷ 2) may produce non-integers, so division isn’t always possible. Rings have these properties:
+- Two operations: Addition (commutative, associative, with zero and negatives) and multiplication (associative, distributes over addition, often with 1).
+- No multiplicative inverses: Division isn’t guaranteed (e.g., 2 has no inverse in integers).
+
+#### Fields - Semiring + "division"
+
+Fields take rings further by ensuring multiplication is commutative (order doesn’t matter) and every non-zero element has a multiplicative inverse, allowing division. In computer vision, real numbers ($\mathbb{R}$) form a field for pixel coordinates, like (123.45, 67.89). You can add, subtract, multiply to scale, or divide to normalize intensities, all staying within real numbers. For example, bilinear interpolation—a technique to resize images—uses a field to compute new pixel values by pairing vectors. Fields have following properties:
+- Two operations: Addition (commutative, associative, with zero and inverses) and multiplication (commutative, associative, with 1 and inverses for non-zero elements).
+- Full inverses: Every non-zero element has a reciprocal.
+
+Fields are the cornerstone of number systems, providing the scalars for vectors and geometric spaces that power vision and robotics.
+
 
 
 
