@@ -1,9 +1,15 @@
 ---
 created: 2025-12-25T07:27:50+05:30
-modified: 2025-12-25T07:40:29+05:30
+modified: 2025-12-25T07:48:54+05:30
 ---
 
 # Obsidian Notes
+
+---
+layout: post
+title: "Obsidian Notes"
+date: 2025-12-25
+---
 
 I love using Obsidian and here are some of the rules, plugins, etc I follow. This is more of a personal note for my reference, but feel free to copy.
 
